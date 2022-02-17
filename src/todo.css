@@ -1,0 +1,14 @@
+.todo {
+  display: flex;
+  width: 30%;
+  margin: 3% auto;
+  justify-content: center;
+  flex-direction: column;
+  border: black 3px solid;
+  border-radius: 15px;
+}
+
+.name-complete {
+  display: flex;
+  justify-content: space-evenly;
+}

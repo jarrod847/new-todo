@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import AddTodo from "./Components/addTodo";
 import TodoList from "./Components/todoList";
+import "./todo.css";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
