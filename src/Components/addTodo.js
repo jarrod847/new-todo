@@ -1,15 +1,36 @@
 import React, { useState } from "react";
 
-const AddTodo = () => {
+const AddTodo = ({ setTodoList }) => {
   const [todo, setTodo] = useState({
     name: "",
     complete: false,
-    id: Date.now(),
+    id: Date(),
   });
+
+  const handleChange = (e) => {
+    setTodo({ ...todo, [e.target.name]: e.target.value });
+  };
+
+  const add = (todo) => {
+    setTodoList((old) => [...old, todo]);
+  };
 
   return (
     <div>
-      <input />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          add(todo);
+          setTodo({ name: "", complete: false, id: Date() });
+        }}
+      >
+        <input
+          name="name"
+          value={todo.name}
+          onChange={(e) => handleChange(e)}
+        />
+        <button>Add</button>
+      </form>
     </div>
   );
 };
